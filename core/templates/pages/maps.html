@@ -1,0 +1,46 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Maps {% endblock title %}
+
+{% block content %}  
+
+<style>
+  body, html{
+    height: 100%;
+  }
+</style>
+
+<body class="bg-primary" style="height: 100%;">
+<div class="container-fluid pt-6 bg-primary" style="height: 100%;">
+  <h2 class="text-white">Maps</h2>
+  <p class="text-white">Country level maps. More coming soon!</p>
+  <div class="row">
+    <div class="col-xl-12 mb-5 mb-xl-0">  <!-- Global interactive Plotly Mabpox -->
+      <div class="card shadow fade-in-bottom">
+        <div class="card-body plotly worldmap">
+          <div class="chart">
+            {% autoescape off %}
+            {{ usa_map }}
+            {% endautoescape %}
+          </div>
+        </div>
+        <div style="position: absolute; padding:1.25rem 1.5rem;">
+            <h6 class="text-uppercase text-muted ls-1 mb-1">USA Counties | Per Capita</h6>
+            <h2 class="text-dark mb-0">Per 100k Residents</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+  {% include "includes/footer.html" %}
+</div>
+</body>
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+<script>
+$('.nav-item a').removeClass('active');
+$('.maps-item a').addClass('active');
+</script>
+{% endblock javascripts %}

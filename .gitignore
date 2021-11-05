@@ -127,3 +127,15 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.vscode
+app/__pycache__
+app/migrations
+cms/__pycache__
+cms/migrations
+core/__pycache__
+core/migrations
+processdata/__pycache__
+processdata/migrations
+vaccine/__pycache__
+vaccine/migrations
